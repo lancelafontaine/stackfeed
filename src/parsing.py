@@ -4,7 +4,9 @@ class Parser:
     def __init__(self):
         self.question_type_default = 'noanswers'
         self.seconds_default = 120
-        self.parser = None
+        program_description = 'A Python command-line tool for listing StackOverflow questions in real-time based on tags.'
+        self.parser = argparse.ArgumentParser(description=program_description)
+
         self.args = None
 
     def parse_question_type(self):
@@ -19,16 +21,16 @@ class Parser:
 
     def validate_arguments(self):
         a = self.args
-        if a.question_type != 'noanswers' and a.question_type != 'unanswered' and a.question_type != 'all':
+        if type(a.question_type) is not str or \
+            (a.question_type != 'noanswers' and \
+            a.question_type != 'unanswered' and \
+            a.question_type != 'all'):
             raise ValueError("QUESTION_TYPE argument is invalid. See --help for more information")
 
-        if a.seconds < self.seconds_default:
+        if type(a.seconds) is not int or a.seconds < self.seconds_default:
             raise ValueError("SECONDS argument is invalid. See --help for more information")
 
     def parse_arguments(self):
-        program_description = 'A Python command-line tool for listing StackOverflow questions in real-time based on tags.'
-        self.parser = argparse.ArgumentParser(description=program_description)
-
         self.parse_question_type()
         self.parse_seconds()
 

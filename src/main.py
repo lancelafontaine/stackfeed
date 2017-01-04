@@ -1,5 +1,5 @@
+from src import parsing
 import requests
-import parsing
 
 def main():
     parse_obj = parsing.Parser()
