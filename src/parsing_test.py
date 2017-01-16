@@ -4,7 +4,7 @@ import pytest
 
 def test_parser_defaults():
     parse_obj = parsing.Parser()
-    assert(parse_obj.question_type_default == 'noanswers_test')
+    assert(parse_obj.question_type_default == 'noanswers')
     assert(parse_obj.seconds_default == 120)
     assert(type(parse_obj.parser) is argparse.ArgumentParser)
     assert(parse_obj.args == None)
