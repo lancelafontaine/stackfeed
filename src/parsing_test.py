@@ -27,6 +27,7 @@ def test_valid_question_types():
     except ValueError as e:
         pytest.fail(str(e))
 
+
     parse_obj.args.question_type = 'unanswered'
     try:
         parse_obj.validate_arguments()
