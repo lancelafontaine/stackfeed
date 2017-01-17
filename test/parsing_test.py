@@ -1,4 +1,4 @@
-from src import parsing
+from stackfeed.src import parsing
 import argparse
 import pytest
 
