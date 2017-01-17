@@ -16,7 +16,7 @@ coverage:
     patch: true
     project:
       default:
-        target: 95
+        target: 90
         threshold: 1
 parsers:
   gcov:
