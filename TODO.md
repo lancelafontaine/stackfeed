@@ -2,7 +2,6 @@
 
 - Adds tags parser
 - Add a license
-- Setup CI/CD
 - Setup PyPI
 - Allow browsing other sites
 - Allow combinations of sites
