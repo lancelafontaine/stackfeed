@@ -81,7 +81,7 @@ def test_valid_seconds():
     except ValueError as e:
         pytest.fail(str(e))
 
-    parse_obj.args.seconds = 99999999999999999999999999
+    parse_obj.args.seconds = 999999999999999999
     try:
         parse_obj.validate_arguments()
     except ValueError as e:
